@@ -19,6 +19,8 @@ function chpwd() {
     fi
 }
 
+function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
+
 export GOROOT=$HOME/bin/go
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
@@ -31,3 +33,11 @@ export PATH="$PATH:$ANDROID_HOME/platform-tools"
 export NODE_PATH="/usr/lib/node_modules:/home/gautam/node_modules"
 export AWS_EC2_DEFAULT_SSH_KEY=$HOME/.ssh/dinesh1
 export LANG="en_US.UTF-8"
+
+source $HOME/google-cloud-sdk/path.zsh.inc
+source $HOME/google-cloud-sdk/completion.zsh.inc
+# added by travis gem
+[ -f /home/gautam/.travis/travis.sh ] && source /home/gautam/.travis/travis.sh
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+source $HOME/.rvm/scripts/rvm
