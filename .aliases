@@ -1,5 +1,4 @@
 alias docker="sudo docker"
-alias serve="python -m SimpleHTTPServer"
 
 # Get External IP / local IPs
 alias ip="curl ipinfo.io/ip"

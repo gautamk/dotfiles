@@ -1,0 +1,33 @@
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+        . "$HOME/.bashrc"
+    fi
+fi
+if [ -d "$HOME/.profile" ]; then
+	. $HOME/.profile
+fi
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$PATH:$HOME/bin"
+fi
+
+function chpwd() {
+    if [ -f .chpwd ]; then
+        echo "Found chpwd hook executing"
+        . `pwd`/.chpwd
+    fi
+}
+
+export GOROOT=$HOME/bin/go
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.cabal/bin" # Add Cabal to PATH
+export PATH="$PATH:$HOME/node_modules/.bin"
+export ANDROID_HOME="$HOME/android_home"
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
+export NODE_PATH="/usr/lib/node_modules:/home/gautam/node_modules"
+export AWS_EC2_DEFAULT_SSH_KEY=$HOME/.ssh/dinesh1
+export LANG="en_US.UTF-8"
