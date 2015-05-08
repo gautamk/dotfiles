@@ -17,6 +17,10 @@ function chpwd() {
         echo "Found chpwd hook executing"
         . `pwd`/.chpwd
     fi
+    if [ -f `pwd`/../bin/activate ]; then
+        echo "Found virtualenv at ../bin/activate"
+        . `pwd`/../bin/activate
+    fi
 }
 
 function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
