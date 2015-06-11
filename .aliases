@@ -8,6 +8,8 @@ alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/download
 # URL-encode / decode strings
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1]);"'
+alias s3='aws s3'
 
 alias dev_appserver="python $HOME/bin/google_appengine/dev_appserver.py"
 [ -f $HOME/.private-aliases ] && source $HOME/.private-aliases
+alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
