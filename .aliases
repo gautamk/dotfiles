@@ -13,3 +13,4 @@ alias s3='aws s3'
 alias dev_appserver="python $HOME/bin/google_appengine/dev_appserver.py"
 [ -f $HOME/.private-aliases ] && source $HOME/.private-aliases
 alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
+eval "$(/home/gautam/.go/bin/hub alias -s)"
